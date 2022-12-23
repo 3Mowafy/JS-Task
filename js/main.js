@@ -20,13 +20,14 @@ const programsFunctionNames = [
     checkNumbersType,
     simpleCalculator,
 ];
-console.log(programsFunctionNames.length);
+
+let aside = document.querySelector("aside");
 
 for (let i = 0; i < 20; i++) {
     let Btn = document.createElement("button");
     Btn.innerHTML = String(programsFunctionNames[i]).split(" ", 2)[1];
     Btn.classList = "view-button";
-    document.querySelector("aside").append(Btn);
+    aside.append(Btn);
 }
 
 let section = document.querySelector("section");
@@ -367,3 +368,9 @@ function simpleCalculator() {
         alert("بتهزر صح؟");
     }
 }
+
+let hideShowBtn = document.querySelector(".hide-show");
+
+hideShowBtn.onclick = function () {
+    aside.classList.toggle("aside-view");
+};
